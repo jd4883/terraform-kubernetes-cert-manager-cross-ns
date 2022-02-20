@@ -1,0 +1,2 @@
+# terraform-kubernetes-cert-manager-cross-ns
+A cross namespace wrapper around https://registry.terraform.io/modules/terraform-iaac/cert-manager/kubernetes/latest, designed to be a very lazy but viable solution to deploying cert-manager and having a cert available in all namespaces you wish to consume it as a secret. Designed and tested with digitalocean but should work with other providers that cert-manager supports

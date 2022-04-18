@@ -17,8 +17,18 @@ resource "kubernetes_secret" "certificate-replicas" {
   lifecycle {
     ignore_changes = [
       data,
+      metadata.0.annotations["cert-manager.io/alt-names"],
+      metadata.0.annotations["cert-manager.io/certificate-name"],
+      metadata.0.annotations["cert-manager.io/common-name"],
+      metadata.0.annotations["cert-manager.io/ip-sans"],
+      metadata.0.annotations["cert-manager.io/issuer-group"],
+      metadata.0.annotations["cert-manager.io/issuer-kind"],
+      metadata.0.annotations["cert-manager.io/issuer-name"],
+      metadata.0.annotations["cert-manager.io/uri-sans"],
       metadata.0.annotations["replicator.v1.mittwald.de/replicated-at"],
       metadata.0.annotations["replicator.v1.mittwald.de/replicated-from-version"],
+      metadata.0.annotations["replicator.v1.mittwald.de/replication-allowed"],
+      metadata.0.annotations["replicator.v1.mittwald.de/replication-allowed-namespaces"],
     ]
   }
   depends_on = [module.cert-manager]

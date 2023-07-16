@@ -5,7 +5,6 @@ terraform {
     kubectl    = { source = "gavinbunney/kubectl" }
     kubernetes = { source = "hashicorp/kubernetes" }
     local      = { source = "hashicorp/local" }
-    template   = { source = "hashicorp/template" }
     time       = { source = "hashicorp/time" }
   }
 }
